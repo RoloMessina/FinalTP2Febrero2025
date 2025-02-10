@@ -1,14 +1,10 @@
-
 import { Router } from "express";
-import wordController from "../controllers/wordController.js";
+import temperatureController from "../controllers/temperaturaController.js";
 
 const router = Router();
 
-router.post('/', wordController.insertWord);    
-router.get('/', wordController.getWord);
-router.get('/cantidad/:cantidad', wordController.getWordsApi);
-router.get('/count', wordController.countWords);
-router.delete('/:word', wordController.deleteWord); // Cambiar para recibir el parámetro `word` en la URL
-router.get('/wordcount', wordController.getWordCount); // Nueva ruta para obtener el conteo de palabras
+router.post('/temperature', temperatureController.insertTemperature);
+router.get('/temperatures', temperatureController.getTemperatures);
+router.get('/temperatures/range', temperatureController.getTemperaturesByRange);
 
 export default router;
